@@ -1,9 +1,6 @@
 package com.jpedro.API_Cert.models;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
+import jakarta.persistence.*;
 
 @Entity
 public class Usuario {
@@ -11,16 +8,17 @@ public class Usuario {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
     private String nome;
-    private String user;
+    private String userName;
     private String pwd;
+    // Alterando o tamanho para suportar a chave
+    @Column(name = "private_key", length = 2048)
     private String privateKey;
+    @Column(name = "public_key", length = 2048)
     private String publicKey;
-
 
     public Long getId() {
         return id;
     }
-
 
     public String getNome() {
         return nome;
@@ -31,11 +29,11 @@ public class Usuario {
     }
 
     public String getUser() {
-        return user;
+        return userName;
     }
 
-    public void setUser(String user) {
-        this.user = user;
+    public void setUserName(String userName) {
+        this.userName = userName;
     }
 
     public String getPwd() {
