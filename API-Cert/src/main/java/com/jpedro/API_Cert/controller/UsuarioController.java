@@ -21,7 +21,7 @@ public class UsuarioController {
     @Autowired
     private ChavesService chavesService;
 
-    @PostMapping
+    @PostMapping("/criar")
     public Usuario criar(@RequestBody Usuario usuario) throws NoSuchAlgorithmException {
         // Gera o par de chaves
         KeyPair parChaves = chavesService.gerarParChaves();

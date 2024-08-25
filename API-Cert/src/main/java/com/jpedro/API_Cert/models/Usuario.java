@@ -5,10 +5,10 @@ import jakarta.persistence.*;
 @Entity
 public class Usuario {
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;
-    private String nome;
+//    @GeneratedValue(strategy = GenerationType.IDENTITY)
+//    private Long id;
     private String userName;
+    private String nome;
     private String pwd;
     // Alterando o tamanho para suportar a chave
     @Column(name = "private_key", length = 2048)
@@ -16,9 +16,9 @@ public class Usuario {
     @Column(name = "public_key", length = 2048)
     private String publicKey;
 
-    public Long getId() {
-        return id;
-    }
+//    public Long getId() {
+//        return id;
+//    }
 
     public String getNome() {
         return nome;
@@ -28,7 +28,7 @@ public class Usuario {
         this.nome = nome;
     }
 
-    public String getUser() {
+    public String getUserName() {
         return userName;
     }
 
